@@ -10,21 +10,17 @@ using namespace std;
 class Archivo{
   public:
       Archivo();
+      Archivo(ofstream, string);
       ~Archivo();
-      //operador <<
-      friend ofstream& operator<<(ostream&, Archivo&);
-      //operador >>
+      friend ostream& operator<<(ostream&, Archivo&);
       friend istream& operator>>(istream&, Archivo&);
+      ofstream getFile();
+      string getContent();
 
 
   private:
-    ofstream outfile;
-    ifstream infile;
-
-
-
-
-
+      string content;
+      ofstream file;
 
 
 };

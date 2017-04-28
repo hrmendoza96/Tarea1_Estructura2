@@ -10,29 +10,37 @@ using namespace std;
 
 void menu();
 
-int int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[]) {
 
   int opcion;
   do{
     menu();
     cin >> opcion;
+    if(opcion==1){
+      //Tomar el contenido que el usuario desea grabar en el archivo
+      string content;
+      cout << "Escriba su contenido:"<< endl;
+      cin.ignore();
+      getline(cin,content);
+
+      ofstream file;
+      file.open("Archivo.txt");
+      Archivo* archivo = new Archivo(file, content);
+
+      cout << *archivo << endl;
+
+
+
+    }
+    if(opcion==2){
+
+    }
+    if(opcion==3){
+      cout << "Adios" << endl;
+    }
 
   }while(opcion!=3);
-  if(opcion==1){
-    Archivo* file = new Archivo();
-    string content;
-    cout << "Escriba su contenido:"<< endl;
-    cin >> content;
-    file << content;
 
-
-  }
-  if(opcion==2){
-
-  }
-  if(opcion==3){
-    cout << "Adios" << endl;
-  }
   return 0;
 }
 

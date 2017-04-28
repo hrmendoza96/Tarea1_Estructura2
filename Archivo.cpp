@@ -9,22 +9,33 @@
 using namespace std;
 
 Archivo::Archivo(){
-  outfile.open("Archivo.txt");
-}
+
+}//constructor
+Archivo::Archivo(ofstream file, string content){
+  this->content=content;
+  this->file=file;
+}//constructor sobrecargado
 Archivo::~Archivo(){
 
+}//Destructor
+
+ofstream Archivo::getFile(){
+  return file;
+
 }
 
-ofstream& operator<<(ofstream& out, Archivo& file) {
-    file.open("Archivo.txt", ios::out | ios::app);
+string Archivo::getContent(){
+  return content;
+}
 
-    file << 
-
-
+ostream& operator<<(ostream& out, Archivo& file) {
+  this->getFile() << ( this->getContent() );
+  out << this->getFile();
+  return out;
 
 }//Fin del metodo
 
-ifstream& operator>>(ifstream& in, Archivo& file) {
+istream& operator>>(istream& in, Archivo& file) {
 
 
 }//Fin del metodo
