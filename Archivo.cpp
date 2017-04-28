@@ -35,6 +35,7 @@ istream& operator>>(istream& in, Archivo& file) {
   ofstream archivo4;
   archivo4.open("Archivo.txt");
   archivo4 << file.content;
+  archivo4.close();
   return in;
 
 }//Fin del metodo
