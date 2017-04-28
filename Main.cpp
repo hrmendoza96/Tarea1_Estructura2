@@ -12,25 +12,18 @@ void menu();
 
 int main(int argc, char const *argv[]) {
 
-  int opcion;
+  int opcion=0;
   do{
     menu();
     cin >> opcion;
     if(opcion==1){
       //Tomar el contenido que el usuario desea grabar en el archivo
-      string content;
       cout << "Escriba su contenido:"<< endl;
-      cin.ignore();
-      getline(cin,content);
-
-      ofstream file;
-      file.open("Archivo.txt");
-      Archivo* archivo = new Archivo(file, content);
-
-      cout << *archivo << endl;
-
-
-
+      Archivo archivo;
+      cin >> archivo;
+      cout << "\033[2J\033[1;1H";
+      cout << "Su contenido:"<<endl;
+      cout << archivo;
     }
     if(opcion==2){
 
