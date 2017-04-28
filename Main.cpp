@@ -24,15 +24,13 @@ int main(int argc, char const *argv[]) {
       cout << "\033[2J\033[1;1H";
       cout << "Su contenido:"<<endl;
       cout << archivo;
+      cout << endl;
     }
     if(opcion==2){
-
-    }
-    if(opcion==3){
       cout << "Adios" << endl;
     }
 
-  }while(opcion!=3);
+  }while(opcion!=2);
 
   return 0;
 }
@@ -41,8 +39,7 @@ int main(int argc, char const *argv[]) {
 void menu(){
   cout << "Tarea 1 | Estructura de Datos 2 | Harold Mendoza" << endl;
   cout << "1) Escribir en Archivo" << endl;
-  cout << "2) Leer Archivo" << endl;
-  cout << "3) Salir" << endl;
+  cout << "2) Salir" << endl;
   cout << "Escoja su opcion: "<< endl;
 
 
